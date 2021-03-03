@@ -15,7 +15,7 @@ router.get("/", async (request, response) => {
 //POST http://localhost:5000/api/reservations/ -Add a new reservation
 router.post("/", async (request, response) => {
   try {
-    const insertedReservation = await knex("reservation").insert(request.query);
+    const insertedReservation = await knex("reservation").insert(request.body);
     response.json(insertedReservation);
   } catch (error) {
     throw error;
@@ -43,7 +43,7 @@ router.put("/:id", async (request, response) => {
       .where({
         id: Number(request.params.id),
       })
-      .update({ number_of_guests: "12" });
+      .update(request.body);
     response.json(UpdatingReservationById);
   } catch (error) {
     throw error;

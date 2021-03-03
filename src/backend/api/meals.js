@@ -7,17 +7,28 @@ router.get("/", async (request, response) => {
   const maxPrice = parseInt(request.query.maxPrice) || "1e500";
   const title = request.query.title || "";
   let availableReservations = eval(request.query.availableReservations);
-  const limitValue = parseInt(request.query.limit) || 999999999999;
   let createdAfter = new Date(request.query.createdAfter);
   createdAfter = createdAfter > 0 ? createdAfter.toISOString() : 0;
+  let limitValue;
+  if (request.query.hasOwnProperty("limit")) {
+    if (parseInt(request.query.limit)) {
+      limitValue = parseInt(request.query.limit);
+    } else {
+      return response.json("Enter the integer");
+    }
+  } else {
+    limitValue = 999999999999;
+  }
 
   try {
     if (request.query.hasOwnProperty("availableReservations")) {
       if (availableReservations) {
         const mealsBookedBySomeone = await knex("meal")
           .select([
+            "meal.id",
             "meal.title",
             "meal.max_reservations",
+            "meal.when",
             knex.raw(
               'meal.max_reservations - sum(reservation.number_of_guests) as "available_reservations"'
             ),
@@ -33,7 +44,7 @@ router.get("/", async (request, response) => {
 
         const reservationMealId = knex("reservation").select("meal_id");
         const mealsNotBookedByAnyone = await knex("meal")
-          .select("title", "max_reservations")
+          .select("id", "title", "max_reservations", "when")
           .where("id", "not in", reservationMealId);
         return response.json(
           mealsNotBookedByAnyone.concat(mealsBookedBySomeone)
@@ -59,7 +70,7 @@ router.get("/", async (request, response) => {
 //POST http://localhost:5000/api/meals/ -Add a new meals
 router.post("/", async (request, response) => {
   try {
-    const insertedMeal = await knex("meal").insert(request.query);
+    const insertedMeal = await knex("meal").insert(request.body);
     response.json(insertedMeal);
   } catch (error) {
     throw error;
@@ -72,7 +83,6 @@ router.get("/:id", async (request, response) => {
     const mealWithSpecificId = await knex("meal").where({
       id: Number(request.params.id),
     });
-    console.log(mealWithSpecificId);
     mealWithSpecificId.length !== 0
       ? response.json(mealWithSpecificId)
       : response.status(404).json("Id is not found");
@@ -88,7 +98,7 @@ router.put("/:id", async (request, response) => {
       .where({
         id: Number(request.params.id),
       })
-      .update({ description: "Dal with spices" });
+      .update(request.body);
     response.json(UpdatingMealById);
   } catch (error) {
     throw error;

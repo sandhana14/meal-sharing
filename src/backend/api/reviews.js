@@ -15,7 +15,7 @@ router.get("/", async (request, response) => {
 //POST http://localhost:5000/api/reviews/ -Add a new review
 router.post("/", async (request, response) => {
   try {
-    const insertedReview = await knex("review").insert(request.query);
+    const insertedReview = await knex("review").insert(request.body);
     response.json(insertedReview);
   } catch (error) {
     throw error;
@@ -43,7 +43,7 @@ router.put("/:id", async (request, response) => {
       .where({
         id: Number(request.params.id),
       })
-      .update({ stars: 2 });
+      .update(request.body);
     response.json(UpdatingReviewById);
   } catch (error) {
     throw error;
