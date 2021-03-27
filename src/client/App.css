@@ -1,3 +1,464 @@
 * {
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul li {
+  list-style: none;
+  padding: 4px;
+}
+.card-holder {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  text-align: center;
+  background-color: #ffb6c1;
+  width: 20%;
+  border-radius: 7px;
+  box-shadow: 2px 2px 20px black;
+  margin: 30px;
+}
+.image img {
+  width: 100%;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+.header {
+  background-color: #fff0f5;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+.main-title {
+  font-style: oblique;
+}
+.title {
+  padding: 20px 10px;
+}
+.subtitle {
+  padding-top: 5px;
+  padding-left: 80px;
+}
+.links ul {
+  display: flex;
+  margin-left: 200px;
+  justify-content: space-evenly;
+}
+.main-image img {
+  width: 100%;
+  height: 550px;
+}
+footer {
+  background-color: #fff0f5;
+  bottom: 0;
+  clear: both;
+}
+.footer-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.column-one {
+  flex: 1;
+}
+.column-two {
+  flex: 2;
+}
+.footer-logo-text {
+  display: flex;
+  align-items: center;
+}
+.footer-icons {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.app-store {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.social-media-icons > * {
+  padding: 20px;
+}
+.app-store > * {
+  padding: 15px;
+}
+.footer-second {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+}
+.footer-last {
+  text-align: center;
+  padding: 10px;
+}
+.footer-second-title {
+  text-decoration: underline;
+  margin-bottom: 7px;
+}
+.card > * {
+  margin-bottom: 7px;
+}
+button {
+  background-color: #582955;
+  border-radius: 8px;
+  border-width: 0px;
+  font-weight: 295;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  font-size: 17px;
+}
+.specific-meal-title,
+.reservation-title {
+  text-align: left;
+  padding: 20px;
+  font-style: oblique;
+}
+.specific-meal-details {
+  padding-left: 10px;
+}
+
+.specific-meal-details > * {
+  padding: 10px;
+}
+
+.specific-meal-details h3 {
+  padding-bottom: 5px;
+}
+.meals-info-reservation-form {
+  display: flex;
+}
+.form-reservation > * {
+  margin-bottom: 20px;
+}
+.form-reservation label {
+  margin: 20px;
+  display: inline-block;
+  width: 150px;
+  font-weight: bold;
+}
+.form-reservation input {
+  width: 350px;
+  height: 30px;
+  display: inline-block;
+}
+.add-reservation-button {
+  margin-left: 190px;
+  margin-top: 20px;
+}
+.available-reservations {
+  margin-left: 220px;
+}
+.error-message {
+  color: #dc143c;
+  margin-left: 350px;
+}
+.form-meal-container {
+  margin: 30px;
+}
+.form-meal label {
+  margin: 20px;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+}
+.form-meal input {
+  width: 350px;
+  height: 30px;
+  display: inline-block;
+}
+.add-meal-button,
+.add-review-button {
+  margin: 10px 240px;
+}
+.host-title {
+  margin: 20px;
+}
+.reservation-booked-message {
+  color: crimson;
+  margin: 20px 80px;
+}
+.meal-added-message,
+.review-added-message {
+  color: crimson;
+  margin: 50px;
+}
+.review-button {
+  margin-left: 20px;
+}
+.form-review-container {
+  margin: 30px 20px;
+}
+.form-review label {
+  margin: 20px;
+  display: inline-block;
+  width: 200px;
+  font-weight: bold;
+}
+.form-review input {
+  width: 350px;
+  height: 30px;
+  display: inline-block;
+}
+.review-form-title {
+  text-align: left;
+  padding-bottom: 20px;
+  font-style: oblique;
+}
+.selectOptions {
+  width: 350px;
+  height: 30px;
+}
+.ratings-star {
+  color: rgb(133, 130, 130);
+}
+.highlighted {
+  color: #ffff00;
+}
+.about-meal-sharing-image {
+  width: 100%;
+  height: 450px;
+}
+.about-title {
+  margin: 20px;
+}
+.about-info {
+  margin: 20px;
+}
+.about-info > * {
+  padding-bottom: 20px;
+}
+.background-image-contact {
+  background-image: url(https://m.media-amazon.com/images/I/71q2Af6cbqL._AC_SL1134_.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+}
+.contact-details {
+  color: #f8f8ff;
+  width: 55%;
+  float: right;
+  padding-top: 15px;
+  font-size: 19px;
+}
+.contact-title {
+  margin-left: 200px;
+}
+.contact-address {
+  width: 50%;
+  margin: 20px 200px;
+}
+.background-image-host {
+  background-image: url(https://st4.depositphotos.com/10480078/23886/i/1600/depositphotos_238863078-stock-photo-set-background-spices-seasonings-food.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.host-text {
+  background-color: #fff0f5;
+  opacity: 0.8;
+  color: black;
+  width: 40%;
+  position: absolute;
+  top: 180px;
+  left: 400px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.host-offers {
+  width: 40%;
+  margin: 30px;
+}
+.host-offers > * {
+  padding: 10px;
+}
+.become-host {
+  margin-left: 10px;
+}
+ul.list-host-experience li,
+ul.process-how-it-works li {
+  list-style-type: square;
+}
+.blink-home-text {
+  color: black;
+  text-align: center;
+  background-color: #ffb6c1;
+  padding: 7px;
+}
+.cooking-image-home-first,
+.cooking-image-home-second {
+  width: 400px;
+  height: 200px;
+}
+.home-first-para,
+.home-second-para {
+  width: 500px;
+  font-size: 19px;
+}
+.first-para-pic,
+.second-para-pic {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 20px;
+}
+.how-it-works {
+  width: 50%;
+  margin: 30px;
+  font-size: 19px;
+}
+.how-it-works > *,
+.process-how-it-works > * {
+  padding-bottom: 20px;
+}
+.input-search-icon {
+  display: flex;
+}
+.input-search-icon input {
+  width: 300px;
+  height: 25px;
+  margin-top: 20px;
+}
+.freq-ans-ques {
+  margin: 20px;
+}
+.search-icon,
+.questions-container {
+  margin-top: 20px;
+}
+.questions-container > * {
+  padding-bottom: 10px;
+}
+.link {
+  text-decoration: none;
+  color: black;
+}
+.link:hover {
+  transition: 0.3s;
+  color: #ff1493;
+  text-decoration: underline;
+}
+.ambassador-message {
+  width: 30%;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: pink;
+  border-radius: 10px;
+}
+.ambassador-application-process {
+  margin: 30px;
+}
+.ambassador-application-process > *,
+.app-list-process > * {
+  padding-bottom: 10px;
+}
+@media screen and (max-width: 680px) {
+  /*Header responsive layout*/
+  .header {
+    background-color: #fff0f5;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .links ul {
+    display: flex;
+    flex-direction: column;
+    margin-right: 500px;
+    width: 50%;
+  }
+  .logo img {
+    margin-right: 300px;
+  }
+  /*Footer*/
+  .footer-first {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-logo-text h2,
+  .app-store {
+    margin-right: 250px;
+  }
+  .footer-icons {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  .social-media-icons {
+    margin-right: 150px;
+  }
+  /*Home*/
+  .first-para-pic,
+  .second-para-pic {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+  }
+  /*Form Meal*/
+  .add-meal-button {
+    margin: 10px 100px;
+  }
+  /*Form Reservation*/
+  .meals-info-reservation-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .available-reservations,
+  .error-message,
+  .add-reservation-button,
+  .add-review-button {
+    margin-left: 20px;
+  }
+  /*Ambassador page*/
+  .ambassador-message {
+    width: 50%;
+  }
+  /*Host page*/
+  .host-text {
+    top: 20px;
+    left: 100px;
+  }
+  /*Contact us page*/
+  .background-image-contact {
+    background-image: url(https://cdn.wallpapersafari.com/54/27/KHtZWN.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 800px;
+  }
+  .contact-details {
+    color: #f8f8ff;
+    width: 100%;
+    float: left;
+    padding-top: 15px;
+    font-size: 19px;
+  }
+  .contact-title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+  .social-media-contact-icons > * {
+    padding-bottom: 20px;
+  }
+  .contact-address {
+    width: 50%;
+    margin: 20px 20px;
+  }
 }
