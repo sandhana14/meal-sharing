@@ -7,6 +7,39 @@ ul li {
   list-style: none;
   padding: 4px;
 }
+.search-bar-meals {
+  margin: 20px;
+  text-align: center;
+}
+.search-bar-meals input {
+  width: 20%;
+  height: 30px;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 10px;
+}
+.no-results-meals {
+  color: crimson;
+  margin-left: 600px;
+}
+.loading-text {
+  margin-left: 650px;
+}
+.search-icon-meals {
+  position: relative;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+}
+.meal-title-auto {
+  background-color: #582955;
+  color: white;
+  border-radius: 7px;
+  width: 25%;
+  height: 30px;
+  margin: 10px 500px;
+  padding: 5px;
+}
 .card-holder {
   display: flex;
   flex-wrap: wrap;
