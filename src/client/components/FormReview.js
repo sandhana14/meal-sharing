@@ -47,7 +47,7 @@ const FormReview = ({ mealId }) => {
 
     console.log(reviewFormData);
 
-    postDataForReviews("http://localhost:5000/api/reviews", reviewFormData)
+    postDataForReviews("/api/reviews", reviewFormData)
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
 

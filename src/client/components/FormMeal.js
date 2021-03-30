@@ -74,7 +74,7 @@ const FormMeal = () => {
   const onSubmitHandle = (event) => {
     event.preventDefault();
 
-    postDataForMeals("http://localhost:5000/api/meals", mealFormData)
+    postDataForMeals("/api/meals", mealFormData)
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
 

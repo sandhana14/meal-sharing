@@ -11,7 +11,7 @@ const GetMeals = () => {
   const [display, setDisplay] = useState(true);
 
   const fetchData = () => {
-    fetch(`http://localhost:5000/api/meals?title=${searchValue}`)
+    fetch(`/api/meals?title=${searchValue}`)
       .then((response) => response.json())
       .then((meal) => {
         setMeals(meal);
@@ -20,7 +20,7 @@ const GetMeals = () => {
   };
 
   const fetchReviewsData = () => {
-    fetch("http://localhost:5000/api/reviews/")
+    fetch("/api/reviews/")
       .then((response) => response.json())
       .then((review) => setReviews(review));
   };

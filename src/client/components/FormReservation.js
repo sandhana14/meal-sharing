@@ -53,10 +53,7 @@ const FormReservation = ({ specificMealReservations, mealId }) => {
   const onSubmitFormHandle = (event) => {
     event.preventDefault();
 
-    postDataForReservations(
-      "http://localhost:5000/api/reservations",
-      reservationsFormData
-    )
+    postDataForReservations("/api/reservations", reservationsFormData)
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
 

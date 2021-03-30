@@ -13,14 +13,14 @@ const MealsById = () => {
   const [error, setError] = useState(false);
 
   const fetchData = () => {
-    fetch(`http://localhost:5000/api/meals/${params.id}`)
+    fetch(`/api/meals/${params.id}`)
       .then((response) => response.json())
       .then((meal) => setSpecificMeal(meal))
       .catch((error) => console.log(error));
   };
 
   const fetchAvailableReservation = () => {
-    fetch("http://localhost:5000/api/meals/?availableReservations=true")
+    fetch("/api/meals/?availableReservations=true")
       .then((response) => response.json())
       .then((reservations) => setAvailableReservations(reservations))
       .catch((error) => console.log(error));
@@ -36,9 +36,6 @@ const MealsById = () => {
   );
 
   const onClickBookReservationHandle = () => {
-    // const specificMealReservations = availableReservations.filter(
-    //   (meal) => meal.id === Number(params.id)
-    // );
     if (specificMealReservations.length === 0) {
       setError(true);
     } else {
