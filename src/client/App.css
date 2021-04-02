@@ -404,11 +404,9 @@ ul.process-how-it-works li {
   .header {
     background-color: #fff0f5;
     padding: 10px;
-    display: flex;
     flex-direction: column;
   }
   .links ul {
-    display: flex;
     flex-direction: column;
     margin-right: 500px;
     width: 50%;
@@ -417,12 +415,8 @@ ul.process-how-it-works li {
     margin-right: 300px;
   }
   /*Footer*/
-  .footer-first {
-    display: flex;
-    flex-direction: column;
-  }
+  .footer-first,
   .footer-logo-text {
-    display: flex;
     flex-direction: column;
   }
   .footer-logo-text h2,
@@ -431,7 +425,6 @@ ul.process-how-it-works li {
   }
   .footer-icons {
     margin-left: 20px;
-    display: flex;
     flex-direction: column;
   }
   .social-media-icons {
@@ -440,9 +433,13 @@ ul.process-how-it-works li {
   /*Home*/
   .first-para-pic,
   .second-para-pic {
-    display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 10px;
+  }
+  .home-first-para,
+  .home-second-para {
+    padding: 20px 10px;
+    width: 80%;
   }
   /*Form Meal*/
   .add-meal-button {
@@ -450,7 +447,6 @@ ul.process-how-it-works li {
   }
   /*Form Reservation*/
   .meals-info-reservation-form {
-    display: flex;
     flex-direction: column;
   }
   .available-reservations,
@@ -474,7 +470,7 @@ ul.process-how-it-works li {
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
-    height: 800px;
+    height: 900px;
   }
   .contact-details {
     color: #f8f8ff;
@@ -493,5 +489,16 @@ ul.process-how-it-works li {
   .contact-address {
     width: 50%;
     margin: 20px 20px;
+  }
+  /*Meals*/
+  .search-bar-meals input {
+    width: 80%;
+  }
+  .meal-title-auto {
+    width: 55%;
+    margin: 10px 100px;
+  }
+  .card {
+    width: 35%;
   }
 }

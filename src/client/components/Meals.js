@@ -116,7 +116,9 @@ const GetMeals = () => {
                   <div className="image">
                     <img
                       src={
-                        recipeImages[index] ? recipeImages[index] : randomImage
+                        recipeImages[meal.id - 1]
+                          ? recipeImages[meal.id - 1]
+                          : randomImage
                       }
                       alt="Recipe picture"
                     ></img>
